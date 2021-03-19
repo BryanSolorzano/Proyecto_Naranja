@@ -11,9 +11,12 @@ public class ClassLogin {
 	public ClassLogin( ) {
 		personal = new ArrayList<Usuarios>( );
 		
-		personal.add( new Usuarios("Wilfrido", "123A", "Admin"));
-		personal.add( new Usuarios("Roberto", "123B", "Soporte Tecnico"));
-		personal.add( new Usuarios("Anonymous", "1111", "Inspector"));
+		personal.add( new Usuarios("Wilfrido", "123A", "Supervisor"));
+		personal.add( new Usuarios("Roberto", "123B", "Admin"));
+		personal.add( new Usuarios("Frida", "123C", "Secretaria"));
+		personal.add( new Usuarios("Anonymous", "1111", "Soporte Tecnico"));
+		personal.add( new Usuarios("Anonimo", "2222", "Chofer"));
+		
 	}
 	
 	/**
@@ -59,6 +62,24 @@ public class ClassLogin {
 			confirmacion = false;
 		}
 		return confirmacion;
+	}
+	
+	/**
+	 * Mostrara un arreglo de todos los usarios que ahcen participes, 
+	 * Se usa el metodo ToString para guardar los datos 
+	 * @return
+	 */
+	public ArrayList<String> mostrarUsuarios( ) {
+		
+		ArrayList<String>motrar = new ArrayList<String>();
+		
+		for( Usuarios used : personal ){
+	        	String datos = used.toString();
+	        	motrar.add( datos );
+	    }
+		
+		
+		return motrar;
 	}
 	
 }
